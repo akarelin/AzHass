@@ -1,0 +1,1 @@
+homeassistant: !include "_azure.yaml"

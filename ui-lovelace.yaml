@@ -1,0 +1,39 @@
+title: Azure
+resources:
+  - url: /local/monster-card.js?v=0.2.3
+    type: js
+  - url: /local/tracker-card.js?v=0.1.5
+    type: js   
+views:
+  - title: Overview
+    icon: mdi:home-assistant
+    cards:
+      - type: custom:monster-card
+        card:
+          type: entities
+          title: Not nest
+        filter:
+          include: [{}]
+          exclude:
+            - entity_id: "*_nest_*"
+            - hidden: "true"
+#   - title: Creekview
+#     panel: true
+#     cards:
+#       - type: iframe
+#         url: 'https://cv-hassio.karel.in/kiosk/default_view'
+#         aspect_ratio: 300%
+#   - title: Sway
+#    icon: mdi:home-modern
+    # panel: true
+    # cards:
+    #   - type: iframe
+    #     url: 'https://sway-hassio.karel.in/lovelace/default_view?kiosk&show_tabs'
+    #     aspect_ratio: 1000%
+  - title: System
+    icon: mdi:wrench
+    cards:
+      - type: custom:tracker-card
+        trackers:
+          - sensor.custom_card_tracker
+          - sensor.custom_component_tracker 

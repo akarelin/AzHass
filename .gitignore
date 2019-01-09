@@ -11,7 +11,7 @@
 !*.md
 !\[packages\]/**
 !\[ui\]/**
-!www/**
+!/www/**
 
 #
 # Except for scripts

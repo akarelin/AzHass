@@ -9,7 +9,6 @@
 !*.yaml
 !.gitignore
 !*.md
-!\[packages\]
 !\[packages\]/**
 !\[ui\]/**
 !www/**
@@ -17,7 +16,6 @@
 #
 # Ignore temp and special folders
 #
-*~
 tts
 deps
 icloud

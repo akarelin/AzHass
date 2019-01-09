@@ -1,0 +1,14 @@
+# Core System
+config:
+hassio:
+cloud:
+updater:
+  include_used_components: true
+  
+# http
+http:
+  api_password: !secret http_password
+  trusted_networks:
+    - 127.0.0.1
+    - 10.168.0.0/13
+

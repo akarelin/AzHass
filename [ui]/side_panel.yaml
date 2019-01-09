@@ -1,0 +1,44 @@
+  states_ui:
+    title: States UI
+    icon: mdi:view-dashboard
+    url: https://hassio.karel.in/states
+  lovelace_ui:
+    title: Lovelace
+    icon: mdi:view-quilt
+    url: https://hassio.karel.in/lovelace/0
+#  grafana:
+#    title: Grafana
+#    icon: mdi:chart-timeline
+#    url: http://hassio.karel.in:3000
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: https://hassio.karel.in:3218
+  logs:
+    title: Logs
+    icon: mdi:format-align-justify
+    url: https://hassio.karel.in:4277
+#  influxdb:
+#    title: InfluxDB
+#    icon: mdi:chart-areaspline
+#    url: http://tulacosm-hassio.karel.in:8888
+  ide:
+    title: IDE
+    icon: mdi:code-braces
+    url: https://hassio.karel.in:8321
+  mqtt:
+    title: MQTT
+    icon: mdi:ladybug
+    url: https://hassio.karel.in:5713
+  rachio:
+    title: Rachio
+    url: https://app.rach.io
+    icon: mdi:water-pump
+#  creekview:
+#    title: Creekview
+#    url: https://cv-hassio.karel.in/lovelace/light-hue?kiosk
+#    icon: mdi:terrain
+#  creekview_alt:
+#    title: Creekview (Alt)
+#    url: https://cv-hassio.karel.in/kiosk/group.lights
+#    icon: mdi:terrain

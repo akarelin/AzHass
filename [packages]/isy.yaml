@@ -1,0 +1,13 @@
+rest_command:
+  isy_program:
+    url: "http://{{ house }}-isy.karel.in/rest/programs/{{ program_id }}/runThen"
+    username: !secret isy_username
+    password: !secret isy_password
+  isy_variable:
+    url: "http://{{ house }}-isy.karel.in/rest/vars/set/2/{{ variable_id }}/{{ value }}"
+    username: !secret isy_username
+    password: !secret isy_password
+  isy_button:
+    url: "http://{{ house }}-isy.karel.in/rest/vars/set/2/{{ variable_id }}/{{ value }}"
+    username: !secret isy_username
+    password: !secret isy_password

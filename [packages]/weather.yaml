@@ -1,0 +1,25 @@
+weather:
+  - platform: darksky
+    name: Creekview
+    api_key: !secret darksky_api_key
+    latitude: !secret creekview_la
+    longitude: !secret creekview_lo
+  - platform: darksky
+    name: Sway
+    api_key: !secret darksky_api_key
+    latitude: !secret sway_la
+    longitude: !secret sway_lo
+  - platform: darksky
+    name: Yakimanka
+    api_key: !secret darksky_api_key
+    latitude: !secret yaki_la
+    longitude: !secret yaki_lo
+
+homeassistant:
+  customize:
+    weather.creekview:
+      hidden: false
+    weather.sway:
+      hidden: false
+    weather.yakimanka:
+      hidden: false

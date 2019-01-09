@@ -1,0 +1,38 @@
+zone:
+  - name: Home
+    latitude: !secret la_la
+    longitude: !secret la_lo
+    radius: !secret la_radius
+    icon: mdi:home-variant
+    passive: yes
+ 
+  - name: Valley
+    latitude: !secret valley_la
+    longitude: !secret valley_lo
+    radius: !secret valley_radius
+    icon: mdi:terrain
+  - name: Creekview
+    latitude: !secret creekview_la
+    longitude: !secret creekview_lo
+    radius: !secret creekview_radius
+    icon: mdi:home-circle
+  - name: Santa Monica
+    latitude: !secret sm_la
+    longitude: !secret sm_lo
+    radius: !secret sm_radius
+    icon: mdi:city-variant-outline
+  - name: Sway
+    latitude: !secret sway_la
+    longitude: !secret sway_lo
+    radius: !secret sway_radius
+    icon: mdi:home-modern
+  - name: TulaCoSM
+    latitude: !secret tulacosm_la
+    longitude: !secret tulacosm_lo
+    radius: !secret tulacosm_radius
+    icon: mdi:briefcase-outline
+  - name: Yakimanka
+    latitude: !secret yaki_la
+    longitude: !secret yaki_lo
+    radius: 50000
+    icon: mdi:home-modern

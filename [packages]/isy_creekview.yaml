@@ -1,0 +1,42 @@
+script:
+  isy_cv_night_lights_on:
+    sequence:
+      service: rest_command.isy_program
+      data:
+        house: cv
+        program_id: "00B3"
+  isy_cv_night_lights_off:
+    sequence:
+      service: rest_command.isy_program
+      data:
+        house: cv
+        program_id: "0019"
+  isy_cv_person_alex_home:
+    sequence:
+      service: rest_command.isy_variable
+      data:
+        house: cv
+        variable_id: "31"
+        value: "1"
+  isy_cv_person_alex_away:
+    sequence:
+      service: rest_command.isy_variable
+      data:
+        house: cv
+        variable_id: "31"
+        value: "0"
+  isy_cv_person_irina_home:
+    sequence:
+      service: rest_command.isy_variable
+      data:
+        house: cv
+        variable_id: "32"
+        value: "1"
+  isy_cv_person_irina_away:
+    sequence:
+      service: rest_command.isy_variable
+      data:
+        house: cv
+        variable_id: "32"
+        value: "0"
+        

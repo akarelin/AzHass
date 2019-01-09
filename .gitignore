@@ -1,0 +1,30 @@
+#
+# Ignore All
+#
+*
+
+#
+# Except for yaml 
+#
+!*.yaml
+!.gitignore
+!*.md
+!\[packages\]
+!\[packages\]/**
+!\[ui\]/**
+!www/**
+
+#
+# Ignore temp and special folders
+#
+*~
+tts
+deps
+icloud
+
+#
+# Ensure that secrets are ignored
+#
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml

@@ -21,6 +21,22 @@ homeassistant:
       hidden: true
     "binary_sensor.*_occupancy":
       hidden: true
+      
+# scene:
+#   - name: CV Preheat
+#     entities:
+#       climate.ts_mb_floors:
+#         operation_mode: heat
+#         target_temp_high: 30
+#       climate.downstairs:
+#         operation_mode: heat
+#         target_temp_high: 21.5
+#       climate.master_bedroom:
+#         operation_mode: heat
+#         target_temp_high: 20
+#       climate.alex_office:
+#         operation_mode: heat
+#         target_temp_high: 20
 
 # group:
 #   hvac_cv:
@@ -39,6 +55,6 @@ homeassistant:
 # script:
 #   hvac_cv_off:
 #     sequence:
-#       service: climate.turn_off
-#       data: 
-#         entity_id: group.hvac_cv
+#       service: climate.turn_on
+#         data: 
+#           entity_id: group.hvac_cv

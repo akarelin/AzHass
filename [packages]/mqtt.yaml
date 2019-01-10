@@ -2,8 +2,8 @@ mqtt:
   broker: hassio.karel.in
   client_id: azure-hassio
   port: 1883
-  username: hassio
-  password: Karelin1024
+  username: !secret mqtt_username
+  password: !secret mqtt_password
   discovery: true
   discovery_prefix: houses
 

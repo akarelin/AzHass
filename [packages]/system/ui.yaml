@@ -1,4 +1,0 @@
-frontend:
-panel_iframe: !include "../../[ui]/side_panel.yaml"
-lovelace:
-  mode: yaml

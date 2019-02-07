@@ -9,7 +9,7 @@
 !*.yaml
 !.gitignore
 !*.md
-!\[packages\]/**
+!\[PACKAGES\]/**
 !\[ui\]/**
 !www/*
 

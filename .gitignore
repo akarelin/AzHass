@@ -30,4 +30,5 @@ icloud
 #
 ip_bans.yaml
 secrets.yaml
+gitcommit.sh
 known_devices.yaml

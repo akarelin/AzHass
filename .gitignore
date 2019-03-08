@@ -1,7 +1,7 @@
 #
 # Ignore All
 #
-*
+/*
 
 #
 # Except for yaml 
@@ -9,8 +9,8 @@
 !*.yaml
 !.gitignore
 !*.md
-!PACKAGES/**
-!www/*
+!/PACKAGES/**
+!/www/**
 
 #
 # Except for scripts

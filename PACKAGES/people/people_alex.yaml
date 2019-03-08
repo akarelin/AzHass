@@ -2,7 +2,7 @@ device_tracker:
   - platform: mqtt_json
     devices:
       alex: person/alex/location
-      alex_iphone: person/alex/iphone
+      alex_iphone: device/alex/iphone
       alex_surface: device/alex/surface
       alex_nuc: device/alex/nuc
       alex_pixel: device/alex/pixel
@@ -38,6 +38,8 @@ group:
       - device_tracker.alex_pixel_ot
       - device_tracker.beacon_alex_backpack
       - device_tracker.beacon_alex_backpack_moving
+      - sensor.alex_iphone_xsm_battery_state
+      - sensor.alex_iphone_xsm_battery_level
   alex_ui:
     name: Alex
     icon: mdi:paw

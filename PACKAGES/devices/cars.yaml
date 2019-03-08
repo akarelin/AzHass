@@ -3,14 +3,14 @@ device_tracker:
     client_id: !secret automatic_client_id_mb
     secret: !secret automatic_secret_mb
     devices:
-      - '2014 Mercedes-Benz GL-Class'
-#      - C_9298CBA3F6235244
-  - platform: automatic
-    client_id: !secret automatic_client_id_bmw
-    secret: !secret automatic_secret_bmw
-    devices:
-      - '2011 BMW Z4'
-#      - C_3712472641DA16CC
+      - !secret automatic_mb_name
+      - !secret automatic_mb
+  # - platform: automatic
+  #   client_id: !secret automatic_client_id_bmw
+  #   secret: !secret automatic_secret_bmw
+  #   devices:
+  #     - !secret automatic_bmw_name
+  #     - !secret automatic_bmw
 
 group:
   cars:
@@ -20,25 +20,14 @@ group:
       - device_tracker.car_mb
       - sensor.car_mb_fuel
       - device_tracker.tile_3b3f0bd54db6e25d
-      - device_tracker.car_bmw
-#      - sensor.car_bmw_fuel
-      - device_tracker.tile_1520116806d5c3c0
+      # - device_tracker.car_bmw
+      # - sensor.car_bmw_fuel
+      # - device_tracker.tile_1520116806d5c3c0
   # cars_ui:
   #   name: Cars
   #   icon: mdi:car
   #   entities:
   #     - group.cars
-
-homeassistant:
-  customize:
-    device_tracker.car_bmw:
-      picture: /local/bmw_z4.png
-      icon: mdi:car-convertible
-      name: BMW Z4
-    device_tracker.car_mb:
-      picture: /local/2014_mercedesbenz_glclass.jpg
-      icon: mdi:car-estate
-      name: Mercedes-Benz GL-Class
 
 sensor:
   - platform: template

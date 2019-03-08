@@ -10,7 +10,6 @@
 !.gitignore
 !*.md
 !PACKAGES/**
-!\[ui\]/**
 !www/*
 
 #

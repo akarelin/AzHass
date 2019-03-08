@@ -2,8 +2,13 @@ title: Azure
 resources:
   - url: /local/monster-card.js?v=0.2.3
     type: js
-  - url: /local/tracker-card.js?v=0.1.5
-    type: js   
+  - url: /local/tracker-card.js?v=0.3.2
+    type: js
+  - url: /local/card-tools.js?v=f5bb8e
+    type: js
+  - url: /local/auto-entities.js?v=f9a58c
+    type: js
+
 views:
   - title: Overview
     icon: mdi:home-assistant
@@ -11,25 +16,28 @@ views:
       - type: custom:monster-card
         card:
           type: entities
-          title: Not nest
+          title: Overview
         filter:
-          include: [{}]
-          exclude:
-            - entity_id: "*_nest_*"
-            - hidden: "true"
-#   - title: Creekview
-#     panel: true
-#     cards:
-#       - type: iframe
-#         url: 'https://cv-hassio.karel.in/kiosk/default_view'
-#         aspect_ratio: 300%
-#   - title: Sway
-#    icon: mdi:home-modern
-    # panel: true
-    # cards:
-    #   - type: iframe
-    #     url: 'https://sway-hassio.karel.in/lovelace/default_view?kiosk&show_tabs'
-    #     aspect_ratio: 1000%
+          include:
+            - group.alex
+            - group.irina
+            - group.creekview
+            - group.sway
+            - group.cars
+            - group.keys
+  - title: Creekview
+    panel: true
+    cards:
+      - type: iframe
+        url: 'https://cv-hassio.karel.in/lovelace/iframe?kiosk&show_tabs'
+        aspect_ratio: 300%
+  - title: Sway
+    icon: mdi:home-modern
+    panel: true
+    cards:
+      - type: iframe
+        url: 'https://sway-hassio.karel.in/lovelace/default_view?kiosk&show_tabs'
+        aspect_ratio: 300%
   - title: System
     icon: mdi:wrench
     cards:

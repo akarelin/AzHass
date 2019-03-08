@@ -1,0 +1,5 @@
+influxdb:
+  database: hassio
+  username: !secret influxdb_username
+  password: !secret influxdb_password
+  ssl: false

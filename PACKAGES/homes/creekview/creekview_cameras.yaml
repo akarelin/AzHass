@@ -1,0 +1,8 @@
+camera:
+  - platform: synology
+    name: Creekview
+    url: https://storage.karel.in:5001
+    username: !secret dscam_username
+    password: !secret dscam_password
+    timeout: 60
+    verify_ssl: False

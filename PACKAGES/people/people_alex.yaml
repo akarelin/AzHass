@@ -1,0 +1,111 @@
+device_tracker:
+  - platform: mqtt_json
+    devices:
+      alex: person/alex/location
+      alex_iphone: person/alex/iphone
+      alex_surface: device/alex/surface
+      alex_nuc: device/alex/nuc
+      alex_pixel: device/alex/pixel
+      alex_nexus: device/alex/nexus
+      alex_watch3: device/alex/watch3
+      alex_watch4: device/alex/watch4
+
+group:
+  alex:
+    name: Alex
+    icon: mdi:paw
+    entities:
+      - device_tracker.alex
+      - device_tracker.alex_iphone
+      - sensor.alex_iphone_battery
+      - device_tracker.alex_watch4
+      - device_tracker.alex_watch3
+      - device_tracker.alex_pixel
+      - device_tracker.alex_nexus
+      - device_tracker.alex_surface
+      - device_tracker.alex_nuc
+      - device_tracker.tile_b615f507da5dbcd2
+      - device_tracker.tile_47e04eb8bc224122
+  alex_devices:
+    name: Alex Devices
+    entities:
+      - device_tracker.alexwatch3
+      - device_tracker.alexwatch4
+      - device_tracker.alexiphonexsm
+      - device_tracker.alex_ios
+      - device_tracker.alex_iphone_ot
+      - device_tracker.alex_nexus_ot
+      - device_tracker.alex_pixel_ot
+      - device_tracker.beacon_alex_backpack
+      - device_tracker.beacon_alex_backpack_moving
+  alex_ui:
+    name: Alex
+    icon: mdi:paw
+    view: true
+    entities:
+      - group.alex
+
+automation alex iphone composite:
+  alias: "Alex Composite Devices"
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id:
+        - device_tracker.alexiphonexsm
+        - device_tracker.alex_ios
+        - device_tracker.alex_iphone_ot
+        - device_tracker.alex_nexus_ot
+        - device_tracker.alex_pixel_ot
+        - device_tracker.alexwatch3
+        - device_tracker.alexwatch4
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: >-
+          device/alex/
+          {% if trigger.entity_id.split('.')[1][4:]|replace('_','') in ['iphonexsm','ios','iphoneot'] %}
+            iphone
+          {% else %}
+            {% if 'watch' in trigger.entity_id %}
+              {{ trigger.entity_id.split('.alex')[1] }}
+            {% else %}
+              {{ trigger.entity_id.split('device_tracker.alex_')[1].split('_')[0] }}
+            {% endif %}
+          {% endif %}
+        payload: >-
+          {
+            "latitude": {{ trigger.to_state.attributes.latitude }},
+            "longitude": {{ trigger.to_state.attributes.longitude }},
+            "gps_accuracy": {{ trigger.to_state.attributes.gps_accuracy | int }},
+            "battery_level": {{ trigger.to_state.attributes.battery | int }}
+          }
+
+# sensor:
+#   - platform: template
+#     sensors:
+#       alex_iphone_battery:
+#         friendly_name: Alex iPhone Battery
+#         unit_of_measurement: '%'
+#         device_class: battery
+#         entity_id: []
+#         value_template: >-
+#           {% set entities=
+#               [
+#                 alexiphonexsm,
+#                 alex_ios,
+#                 alex_iphone_ot
+#               ]
+#               for entity in entities
+           
+           
+#             {% if states.device_tracker.alex_iphone.attributes.battery %}
+#                 {{ states.device_tracker.alex_iphone.attributes.battery|round }}
+#             {% endif %}
+
+# sensor:
+#   - platform: mqtt
+#     state_topic: "owntracks/username/deviceid"
+#     name: "Battery Tablet"
+#     unit_of_measurement: "%"
+#     value_template: '{{ value_json.batt }}'
+#     device_class: battery

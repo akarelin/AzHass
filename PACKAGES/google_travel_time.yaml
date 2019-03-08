@@ -1,0 +1,11 @@
+sensor:
+  - platform: google_travel_time
+    name: Sway to Creekview
+    origin: zone.sway
+    destination: zone.creekview
+    api_key: !secret google_maps_api_key
+  - platform: google_travel_time
+    name: Creekview to Sway
+    origin: zone.creekview
+    destination: zone.sway
+    api_key: !secret google_maps_api_key

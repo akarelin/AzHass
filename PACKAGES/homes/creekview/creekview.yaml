@@ -1,0 +1,19 @@
+input_select:
+  creekview:
+    name: Creekview Mode
+    options:
+     - Unknown
+     - Home
+     - Away
+
+zone:
+  - name: Valley
+    latitude: !secret valley_la
+    longitude: !secret valley_lo
+    radius: !secret valley_radius
+    icon: mdi:terrain
+  - name: Creekview
+    latitude: !secret creekview_la
+    longitude: !secret creekview_lo
+    radius: !secret creekview_radius
+    icon: mdi:home-circle

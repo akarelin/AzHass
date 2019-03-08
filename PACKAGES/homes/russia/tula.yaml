@@ -1,0 +1,13 @@
+zone:
+  - name: Tula
+    latitude: !secret tula_la
+    longitude: !secret tula_lo
+    radius: !secret tula_radius
+    icon: mdi:horseshoe
+
+weather:
+  - platform: darksky
+    name: Tula
+    api_key: !secret darksky_api_key
+    latitude: !secret tula_la
+    longitude: !secret tula_lo

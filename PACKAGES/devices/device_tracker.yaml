@@ -1,0 +1,19 @@
+history:
+logbook:
+recorder:
+  db_url: !secret mysql_connstring
+
+owntracks:
+  mqtt_topic: "owntracks/#"
+  waypoints: false
+
+device_tracker:
+  - platform: icloud
+    username: !secret icloud_username
+    password: !secret icloud_password
+#  - platform: google_maps
+#    username: !secret google_username
+#    password: !secret google_password
+  - platform: tile
+    username: !secret tile_username
+    password: !secret tile_password

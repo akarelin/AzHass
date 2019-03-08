@@ -1,0 +1,120 @@
+weather:
+  - platform: darksky
+    name: Sway
+    api_key: !secret darksky_api_key
+    latitude: !secret sway_la
+    longitude: !secret sway_lo
+
+homeassistant:
+  customize:
+    weather.sway:
+      hidden: false
+
+# script:
+#   cv_hvac_away:
+#     sequence: 
+#       - service: climate.set_away_mode
+#         data:
+#           entity_id:
+#             - climate.alex_office
+#             - climate.downstairs
+#             - climate.guest_bedroom
+#             - climate.living_room
+#             - climate.master_bedroom
+#             - climate.master_bathroom
+#             - climate.upstairs
+#           away_mode: on
+#   cv_hvac_home:
+#     sequence:
+#       - service: climate.set_away_mode
+#         data:
+#           entity_id:
+#             - climate.alex_office
+#             - climate.downstairs
+#             - climate.master_bedroom
+#           away_mode: off
+#   cv_hvac_preheat:
+#     sequence:
+#       - service: climate.set_operation_mode
+#         data:
+#           entity_id: climate.master_bedroom, climate.downstairs
+#           operation_mode: 'heat'
+#       - service: climate.set_temperature
+#         data:
+#           entity_id: climate.downstairs, climate.master_bedroom
+#           temperature: 21.5
+#       - service: climate.set_hold_mode
+#         data:
+#           entity_id: climate.downstairs, climate.master_bedroom
+#           hold_mode: 'home'
+#       - service: climate.set_temperature
+#         data:
+#           entity_id: climate.master_bathroom
+#           temperature: 30
+#       - service: climate.set_hold_mode
+#         data:
+#           entity_id: climate.master_bathroom
+#           hold_mode: "temperature"
+
+
+# # automation home arrival:
+# #   - alias: "Home Arrival"
+# #     hide_entity: true
+# #     trigger:
+# #       platform: state
+# #       entity_id: 
+# #         - device_tracker.alex
+# #         - device_tracker.irina
+# #       to_state:
+# #         'Home'
+# #     action:
+# #       - service: 
+
+
+# # script:
+# #   sway_alex_arrives:
+# #     sequence:
+# #       - service: input_select.select_option
+# #         data:
+# #           entity_id: input_select.sway
+# #           option: Home
+# #       - service: input_select.select_option
+# #         data:
+# #           entity_id: input_select.creekview
+# #           option: Away
+# #       - service: script.turn_on
+# #         data:
+# #           entity_id: 
+# #             - script.isy_cv_person_alex_away
+# #             - script.isy_sway_person_alex_home
+# #   cv_alex_arrives:
+# #     sequence:
+# #       - service: input_select.select_option
+# #         data:
+# #           entity_id: input_select.creekview
+# #           option: Home
+# #       - service: input_select.select_option
+# #         data:
+# #           entity_id: input_select.sway
+# #           option: Away
+# #       - service: script.turn_on
+# #         data:
+# #           entity_id: 
+# #             - script.isy_cv_person_alex_home
+# #             - script.isy_sway_person_alex_away
+# #   alex_away:
+# #     sequence:
+# #       - service: input_select.select_option
+# #         data:
+# #           entity_id: input_select.creekview
+# #           option: Away
+# #       - service: input_select.select_option
+# #         data:
+# #           entity_id: input_select.sway
+# #           option: Away
+# #       - service: script.turn_on
+# #         data:
+# #           entity_id: 
+# #             - script.isy_cv_person_alex_away
+# #             - script.isy_sway_person_alex_away
+      

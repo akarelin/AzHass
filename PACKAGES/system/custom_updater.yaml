@@ -1,0 +1,27 @@
+custom_updater:
+  track:
+  - cards
+  - components
+  - python_scripts
+
+homeassistant:
+  customize_glob:
+    "sensor.custom_*_tracker":
+      hidden: true
+  customize:
+    sensor.custom_card_tracker:
+      hidden: true
+    sensor.custom_component_tracker:
+      hidden: true
+    sensor.custom_python_script_tracker:
+      hidden: true
+    group.custom_updater:
+      hidden: true
+
+group:
+  custom_updater:
+    view: false
+    entities:
+      - sensor.custom_card_tracker
+      - sensor.custom_component_tracker
+      - sensor.custom_python_script_tracker

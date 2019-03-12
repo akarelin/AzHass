@@ -1,6 +1,0 @@
-zone:
-  - name: TulaCoSM
-    latitude: !secret tulacosm_la
-    longitude: !secret tulacosm_lo
-    radius: !secret tulacosm_radius
-    icon: mdi:briefcase-outline

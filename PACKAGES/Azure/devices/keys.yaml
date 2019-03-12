@@ -1,0 +1,21 @@
+group:
+  keys:
+    name: Keys
+    icon: mdi:key
+    view: false
+    entities:
+      - device_tracker.tile_3b3f0bd54db6e25d
+      - device_tracker.tile_1520116806d5c3c0
+      - device_tracker.tile_b615f507da5dbcd2
+      - device_tracker.tile_47e04eb8bc224122
+      - device_tracker.tile_2d251c729f0d049b
+      - device_tracker.tile_b72127b6ff05748a
+
+homeassistant:
+  customize:
+    device_tracker.tile_47e04eb8bc224122:
+      icon: mdi:nfc-variant
+      name: Alex Keyfobs
+    device_tracker.tile_b615f507da5dbcd2:
+      icon: mdi:wallet-outline
+      name: Alex Wallet

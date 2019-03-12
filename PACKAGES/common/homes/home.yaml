@@ -1,0 +1,7 @@
+zone:
+  - name: Home
+    latitude: !secret la_la
+    longitude: !secret la_lo
+    radius: !secret la_radius
+    icon: mdi:home-variant
+    passive: yes

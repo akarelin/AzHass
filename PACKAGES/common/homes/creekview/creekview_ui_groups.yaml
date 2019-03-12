@@ -1,0 +1,20 @@
+group:
+  creekview:
+    name: Creekview
+    icon: mdi:terrain
+    view: false
+    control: hidden
+    entities:
+      - input_select.creekview
+      - weather.creekview
+      - climate.master_bedroom
+      - climate.master_bathroom
+      - climate.downstairs
+      - climate.alex_office
+      - climate.alex_office_aux
+  creekview_ui:
+    name: Creekview
+    icon: mdi:terrain
+    view: true
+    entities:
+      - group.creekview

@@ -1,0 +1,52 @@
+zone:
+  - name: home
+    latitude: !secret yaki_la
+    longitude: !secret yaki_lo
+    radius: !secret moscow_radius
+    icon: mdi:castle
+    passive: true
+  - name: Moscow
+    latitude: !secret yaki_la
+    longitude: !secret yaki_lo
+    radius: !secret moscow_radius
+    icon: mdi:castle
+
+group:
+  russia:
+    name: Russia
+    icon: mdi:castle
+    entities:
+      - device_tracker.galina
+      - input_select.yaki
+  russia_ui:
+    name: Russia
+    icon: mdi:castle
+    view: true
+    entities:
+      - group.russia
+      - weather.yakimanka
+      - weather.tula
+
+# automation yaki mqtt2is:
+#   alias: "Yaki Home State"
+#   hide_entity: true
+#   trigger:
+#     platform: mqtt
+#     topic: home/yaki/state
+#   action:
+#     service: input_select.select_option
+#     data_template:
+#       entity_id: input_select.yaki
+#       option: "{{ trigger.payload }}"
+      
+# automation svobody mqtt2is:
+#   alias: "Svobody Home State"
+#   hide_entity: true
+#   trigger:
+#     platform: mqtt
+#     topic: home/svobody/state
+#   action:
+#     service: input_select.select_option
+#     data_template:
+#       entity_id: input_select.svobody
+#       option: "{{ trigger.payload }}"

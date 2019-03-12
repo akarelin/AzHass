@@ -1,0 +1,31 @@
+input_select:
+  yaki:
+    name: Yakimanka Mode
+    options:
+     - Unknown
+     - Home
+     - Away
+
+weather:
+  - platform: darksky
+    name: Yakimanka
+    api_key: !secret darksky_api_key
+    latitude: !secret yaki_la
+    longitude: !secret yaki_lo
+
+homeassistant:
+  customize:
+    weather.yakimanka:
+      hidden: false
+
+zone:
+  - name: Yakimanka
+    latitude: !secret yaki_la
+    longitude: !secret yaki_lo
+    radius: !secret yakimanka_radius
+    icon: mdi:bridge
+  - name: Yaki
+    latitude: !secret yaki_la
+    longitude: !secret yaki_lo
+    radius: !secret yaki_radius
+    icon: mdi:home-modern

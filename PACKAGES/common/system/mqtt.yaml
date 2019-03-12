@@ -1,0 +1,6 @@
+mqtt:
+  broker: !secret mqtt_broker
+  port: !secret mqtt_port
+  client_id: azure-hassio
+  username: !secret mqtt_username
+  password: !secret mqtt_password

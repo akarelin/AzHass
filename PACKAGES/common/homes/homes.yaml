@@ -1,0 +1,74 @@
+automation hs2mqtt:
+  alias: "Home State to MQTT"
+  initial_state: on
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: 
+      - input_select.sway
+      - input_select.creekview
+      - input_select.yaki
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "home/{{ trigger.entity_id.split('.')[1] }}/state"
+        payload: "{{ trigger.to_state.state }}"
+automation mqtt2hs:
+  alias: "Home State from MQTT"
+  hide_entity: true
+  initial_state: on
+  trigger:
+    platform: mqtt
+    topic: 'home/+/state'
+  action:
+    service_template: input_select.select_option
+    data_template:
+      entity_id: "input_select.{{ trigger.topic.split('/')[1] }}"
+      option: "{{ trigger.payload }}"
+
+# script:
+#   sway_alex_arrives:
+#     sequence:
+#       - service: input_select.select_option
+#         data:
+#           entity_id: input_select.sway
+#           option: Home
+#       - service: input_select.select_option
+#         data:
+#           entity_id: input_select.creekview
+#           option: Away
+#       - service: script.turn_on
+#         data:
+#           entity_id: 
+#             - script.isy_cv_person_alex_away
+#             - script.isy_sway_person_alex_home
+#   cv_alex_arrives:
+#     sequence:
+#       - service: input_select.select_option
+#         data:
+#           entity_id: input_select.creekview
+#           option: Home
+#       - service: input_select.select_option
+#         data:
+#           entity_id: input_select.sway
+#           option: Away
+#       - service: script.turn_on
+#         data:
+#           entity_id: 
+#             - script.isy_cv_person_alex_home
+#             - script.isy_sway_person_alex_away
+#   alex_away:
+#     sequence:
+#       - service: input_select.select_option
+#         data:
+#           entity_id: input_select.creekview
+#           option: Away
+#       - service: input_select.select_option
+#         data:
+#           entity_id: input_select.sway
+#           option: Away
+#       - service: script.turn_on
+#         data:
+#           entity_id: 
+#             - script.isy_cv_person_alex_away
+#             - script.isy_sway_person_alex_away

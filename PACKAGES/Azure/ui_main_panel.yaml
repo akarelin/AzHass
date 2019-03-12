@@ -1,0 +1,12 @@
+group:
+  main:
+    name: Main
+    view: yes
+    icon: mdi:home
+    entities:
+      - group.alex
+      - group.irina
+      - group.creekview
+      - group.sway
+      - group.cars
+      - group.keys

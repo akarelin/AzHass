@@ -3,8 +3,12 @@ telegram_bot:
     api_key: !secret telegram_bot
     allowed_chat_ids:
       - !secret telegram_alex
+      - !secret telegram_irina
 
 notify:
-  - name: Telegram
+  - name: Alex Telegram
     platform: telegram
     chat_id: !secret telegram_alex
+  - name: Irina Telegram
+    platform: telegram
+    chat_id: !secret telegram_irina

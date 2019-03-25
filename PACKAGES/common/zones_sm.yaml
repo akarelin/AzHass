@@ -1,13 +1,3 @@
-input_select:
-  sway:
-    name: Sway Mode
-    options:
-     - Unknown
-     - Home
-     - Sleep
-     - Away
-     - Vacation
-
 zone:
   - name: Santa Monica
     latitude: !secret sm_la
@@ -19,3 +9,8 @@ zone:
     longitude: !secret sway_lo
     radius: !secret sway_radius
     icon: mdi:domain
+  - name: TulaCoSM
+    latitude: !secret tulacosm_la
+    longitude: !secret tulacosm_lo
+    radius: !secret tulacosm_radius
+    icon: mdi:briefcase-outline

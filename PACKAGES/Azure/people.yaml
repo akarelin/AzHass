@@ -15,8 +15,6 @@ automation dt2pt:
     entity_id: 
       - device_tracker.galina_iphone
       - device_tracker.irina_iphone
-      - device_tracker.alex_iphone_ot
-      - device_tracker.alex_ios
       - device_tracker.alex_iphone
   action:
     - service: mqtt.publish
@@ -26,6 +24,7 @@ automation dt2pt:
           {
             "latitude": {{ trigger.to_state.attributes.latitude }},
             "longitude": {{ trigger.to_state.attributes.longitude }},
-            "gps_accuracy": {{ trigger.to_state.attributes.gps_accuracy | int }}
+            "gps_accuracy": {{ trigger.to_state.attributes.gps_accuracy | int }},
+            "triggered_by": "{{ state_attr('trigger.to_state', 'triggered_by') }}"
           }
         retain: true

@@ -1,1 +1,9 @@
 homeassistant: !include "_azure.yaml"
+
+zone:
+  - name: home
+    latitude: !secret la_la
+    longitude: !secret la_lo
+    radius: !secret la_radius
+    icon: mdi:home-variant
+    passive: true

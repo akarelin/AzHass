@@ -1,12 +1,3 @@
-input_select:
-  creekview:
-    name: Creekview Mode
-    options:
-     - Unknown
-     - Home
-     - Away
-     - Sleep
-
 zone:
   - name: Valley
     latitude: !secret valley_la

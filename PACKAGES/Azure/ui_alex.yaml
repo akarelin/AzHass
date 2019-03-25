@@ -14,18 +14,11 @@ group:
       - device_tracker.alex_nuc
       - device_tracker.tile_b615f507da5dbcd2
       - device_tracker.tile_47e04eb8bc224122
+      - device_tracker.tile_e0159913b12f4357
   alex_devices:
     name: Alex Devices
     entities:
-      - device_tracker.alexwatch3
-      - device_tracker.alexwatch4
-      - device_tracker.alexiphonexsm
       - device_tracker.alex_ios
-      - device_tracker.alex_iphone_ot
-      - device_tracker.alex_nexus_ot
-      - device_tracker.alex_pixel_ot
-      - device_tracker.beacon_alex_backpack
-      - device_tracker.beacon_alex_backpack_moving
       - sensor.alex_iphone_xsm_battery_state
       - sensor.alex_iphone_xsm_battery_level
   alex_ui:

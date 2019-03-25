@@ -2,10 +2,11 @@ device_tracker:
   - platform: mqtt_json
     devices:
       alex: person/alex/location
-      alex_iphone: person/alex/iphone
+      alex_iphone: device/alex/iphone
       alex_surface: device/alex/surface
       alex_nuc: device/alex/nuc
       alex_pixel: device/alex/pixel
       alex_nexus: device/alex/nexus
       alex_watch3: device/alex/watch3
       alex_watch4: device/alex/watch4
+      alex_backpack: item/alex/backpack

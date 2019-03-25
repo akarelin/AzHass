@@ -1,37 +1,56 @@
-automation alex synthetic devices:
-  alias: "Alex Synthetic Devices"
+automation alex ios repost:
+  alias: "Alex iOS Device Repost to MQTT"
   hide_entity: true
   trigger:
     - platform: state
-      entity_id:
-        - device_tracker.alexiphonexsm
-        - device_tracker.alex_ios
-        - device_tracker.alex_iphone_ot
-        - device_tracker.alex_nexus_ot
-        - device_tracker.alex_pixel_ot
-        - device_tracker.alexwatch3
-        - device_tracker.alexwatch4
+      entity_id: device_tracker.alex_ios
   action:
     - service: mqtt.publish
       data_template:
-        topic: >-
-          device/alex/
-          {%- if trigger.entity_id.split('.')[1][4:]|replace('_','') in ['iphonexsm','ios','iphoneot'] -%}
-            iphone
-          {%- else -%}
-            {%- if 'watch' in trigger.entity_id -%}
-              {{ trigger.entity_id.split('.alex')[1] }}
-            {%- else -%}
-              {{ trigger.entity_id.split('device_tracker.alex_')[1].split('_')[0] }}
-            {%- endif -%}
-          {%- endif -%}
+        topic: device/alex/iphone_app
         payload: >-
           {
             "latitude": {{ trigger.to_state.attributes.latitude }},
             "longitude": {{ trigger.to_state.attributes.longitude }},
             "gps_accuracy": {{ trigger.to_state.attributes.gps_accuracy | int }},
-            "battery_level": {{ trigger.to_state.attributes.battery | int }}
+            "battery_level": {{ trigger.to_state.attributes.battery | int }},
+            "triggered_by": "{{ trigger.to_state.entity_id.split('.')[1] }}"
           }
+
+# automation alex synthetic devices:
+#   alias: "Alex Synthetic Devices"
+#   hide_entity: true
+#   trigger:
+#     - platform: state
+#       entity_id:
+#         - device_tracker.alexiphonexsm
+#         - device_tracker.alex_ios
+#         # - device_tracker.alex_iphone_ot
+#         # - device_tracker.alex_nexus_ot
+#         # - device_tracker.alex_pixel_ot
+#         - device_tracker.alexwatch3
+#         - device_tracker.alexwatch4
+#   action:
+#     - service: mqtt.publish
+#       data_template:
+#         topic: >-
+#           device/alex/
+#           {%- if trigger.entity_id.split('.')[1][4:]|replace('_','') in ['iphonexsm','ios','iphoneot'] -%}
+#             iphone
+#           {%- else -%}
+#             {%- if 'watch' in trigger.entity_id -%}
+#               {{ trigger.entity_id.split('.alex')[1] }}
+#             {%- else -%}
+#               {{ trigger.entity_id.split('device_tracker.alex_')[1].split('_')[0] }}
+#             {%- endif -%}
+#           {%- endif -%}
+#         payload: >-
+#           {
+#             "latitude": {{ trigger.to_state.attributes.latitude }},
+#             "longitude": {{ trigger.to_state.attributes.longitude }},
+#             "gps_accuracy": {{ trigger.to_state.attributes.gps_accuracy | int }},
+#             "battery_level": {{ trigger.to_state.attributes.battery | int }}
+#           }
 # sensor:
 #   - platform: template
 #     sensors:
@@ -53,11 +72,3 @@ automation alex synthetic devices:
 #             {% if states.device_tracker.alex_iphone.attributes.battery %}
 #                 {{ states.device_tracker.alex_iphone.attributes.battery|round }}
 #             {% endif %}
-
-# sensor:
-#   - platform: mqtt
-#     state_topic: "owntracks/username/deviceid"
-#     name: "Battery Tablet"
-#     unit_of_measurement: "%"
-#     value_template: '{{ value_json.batt }}'
-#     device_class: battery

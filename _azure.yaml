@@ -1,4 +1,7 @@
   name: Azure
+  customize:
+    zone.home:
+      friendly_name: Azure
   latitude: !secret la_la
   longitude: !secret la_lo
   elevation: !secret la_elevation
@@ -7,4 +10,3 @@
   packages: !include_dir_named "PACKAGES/"
   auth_providers:
    - type: homeassistant
-   - type: legacy_api_password

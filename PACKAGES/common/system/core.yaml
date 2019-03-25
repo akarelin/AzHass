@@ -1,20 +1,16 @@
-# Core System
 config:
-hassio:
-cloud:
 updater:
   include_used_components: true
-system_health:
-
-http:
-  api_password: !secret http_password
-
 frontend:
   javascript_version: latest
-lovelace:
-  mode: yaml
-  
 homeassistant:
   customize_glob:
     "group.all_*":
       hidden: true
+system_health:
+http:
+hassio:
+cloud:
+
+lovelace:
+  mode: yaml

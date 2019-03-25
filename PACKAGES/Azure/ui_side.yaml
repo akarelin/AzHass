@@ -11,10 +11,10 @@ panel_iframe:
     title: IDE
     icon: mdi:code-braces
     url: https://hassio.karel.in:8321
-  mqtt:
-    title: MQTT
-    icon: mdi:ladybug
-    url: https://hassio.karel.in:5713
+  # mqtt:
+  #   title: MQTT
+  #   icon: mdi:ladybug
+  #   url: https://hassio.karel.in:5713
   jupyterlab:
     title: JupyterLab
     icon: mdi:flask

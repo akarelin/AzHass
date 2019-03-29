@@ -7,6 +7,10 @@ panel_iframe:
     title: Logs
     icon: mdi:format-align-justify
     url: https://hassio.karel.in:4277
+  vscode:
+    title: Visual Studio Code
+    icon: mdi:visual-studio-code
+    url: https://hassio.karel.in:1337
   ide:
     title: IDE
     icon: mdi:code-braces

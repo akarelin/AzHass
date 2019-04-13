@@ -9,6 +9,9 @@
 !*.yaml
 !.gitignore
 !*.md
+!*.js
+!*.jpg
+!*.png
 !PACKAGES/**
 !PACKAGES/
 !/www/**

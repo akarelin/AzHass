@@ -1,7 +1,0 @@
-device_tracker:
-  - platform: mqtt_json
-    devices:
-      irina: person/irina/location
-      irina_iphone: device/irina/iphone
-      irina_pixel: device/irina/pixel
-      irina_macbook: device/irina/macbook

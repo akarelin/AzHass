@@ -1,7 +1,0 @@
-device_tracker:
-  - platform: mqtt_json
-    devices:
-      galina: person/galina/location
-      galina_iphone: device/galina/iphone
-      galina_watch: device/galina/watch
-      galina_ipad: device/galina/ipad

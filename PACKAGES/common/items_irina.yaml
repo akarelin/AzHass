@@ -1,0 +1,33 @@
+device_tracker:
+  - platform: mqtt_json
+    devices:
+      irina: person/irina/location
+      irina_iphone: device/irina/iphone
+      irina_pixel: device/irina/pixel
+      irina_macbook: device/irina/macbook
+
+group:
+  irina:
+    name: Irina
+    icon: mdi:cat
+    entities:
+    - device_tracker.irina
+    - device_tracker.irina_iphone
+    - device_tracker.irina_pixel
+    - device_tracker.irina_macbook
+
+homeassistant:
+  customize:
+    device_tracker.irina:
+      friendly_name: Irina
+      entity_picture: /local/irina.jpg
+      icon: mdi:cat
+    device_tracker.irina_iphone:
+      friendly_name: Irina iPhone
+      icon: mdi:cellphone-iphone
+    device_tracker.irina_pixel:
+      icon: mdi:cellphone-android
+      friendly_name: Irina Pixel
+    device_tracker.irina_macbook:
+      icon: mdi:laptop-mac
+      friendly_name: Irina Macbook

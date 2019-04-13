@@ -1,0 +1,10 @@
+notify:
+  - name: Family
+    platform: group
+    services:
+      - service: alex_telegram
+      - service: irina_telegram
+  - name: Alex
+    platform: group
+    services:
+      - service: alex_telegram

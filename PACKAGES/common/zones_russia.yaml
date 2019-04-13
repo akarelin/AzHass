@@ -4,23 +4,23 @@ zone:
     longitude: !secret yaki_lo
     radius: !secret moscow_radius
     icon: mdi:castle
-  - name: Svobody
-    latitude: !secret svobody_la
-    longitude: !secret svobody_lo
-    radius: !secret svobody_radius
-    icon: mdi:floor-plan
-  - name: Tula
-    latitude: !secret tula_la
-    longitude: !secret tula_lo
-    radius: !secret tula_radius
-    icon: mdi:horseshoe
-  - name: Yakimanka
-    latitude: !secret yaki_la
-    longitude: !secret yaki_lo
-    radius: !secret yakimanka_radius
-    icon: mdi:bridge
   - name: Yaki
     latitude: !secret yaki_la
     longitude: !secret yaki_lo
     radius: !secret yaki_radius
     icon: mdi:home-modern
+  - name: Tula
+    latitude: !secret tula_la
+    longitude: !secret tula_lo
+    radius: !secret tula_radius
+    icon: mdi:horseshoe
+  - name: Svobody
+    latitude: !secret svobody_la
+    longitude: !secret svobody_lo
+    radius: !secret svobody_radius
+    icon: mdi:floor-plan
+#   - name: Yakimanka
+#     latitude: !secret yaki_la
+#     longitude: !secret yaki_lo
+#     radius: !secret yakimanka_radius
+#     icon: mdi:bridge

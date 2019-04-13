@@ -1,0 +1,22 @@
+device_tracker:
+  - platform: mqtt_json
+    devices:
+      keys_bmw: item/keys/bmw
+      keys_mb: item/keys/mb
+      keys_yakimanka1: item/keys/yakimanka1
+      keys_yakimanka2: item/keys/yakimanka2
+
+homeassistant:
+  customize:
+    device_tracker.keys_bmw:
+      icon: mdi:car-key
+      friendly_name: "BMW Keys"
+    device_tracker.keys_mb:
+      icon: mdi:car-key
+      friendly_name: "MB Keys"
+    device_tracker.keys_yakimanka1:
+      icon: mdi:key-change
+      friendly_name: "Yakimanka Keys 1"
+    device_tracker.keys_yakimanka2:
+      icon: mdi:key-variant
+      friendly_name: "Yakimanka Keys 2"

@@ -3,14 +3,9 @@ updater:
   include_used_components: true
 frontend:
   javascript_version: latest
-homeassistant:
-  customize_glob:
-    "group.all_*":
-      hidden: true
 system_health:
 http:
 hassio:
 cloud:
 
 lovelace:
-  mode: yaml

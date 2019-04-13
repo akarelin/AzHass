@@ -1,9 +1,0 @@
-history:
-logbook:
-recorder:
-  db_url: !secret mysql_connstring
-
-device_tracker:
-  - platform: tile
-    username: !secret tile_username
-    password: !secret tile_password

@@ -1,0 +1,78 @@
+# camera:
+#   - platform: synology
+#     name: Creekview
+#     url: https://storage.karel.in:5001
+#     username: !secret dscam_username
+#     password: !secret dscam_password
+#     timeout: 60
+#     verify_ssl: False
+
+camera:
+  - platform: generic
+    stream_source: 'rtsp://10.172.90.101:554/Streaming/Channels/102'
+    still_image_url: 'http://10.172.90.101/Streaming/Channels/1/picture'
+    name: Driveway
+    username: !secret cv_cctv_username
+    password: !secret cv_cctv_password
+    authentication: digest
+  - platform: generic
+    stream_source: 'rtsp://10.172.90.102:554/Streaming/Channels/102'
+    still_image_url: 'http://10.172.90.102/Streaming/Channels/1/picture'
+    name: Courtyard
+    username: !secret cv_cctv_username
+    password: !secret cv_cctv_password
+    authentication: digest
+  - platform: generic
+    stream_source: 'rtsp://10.172.90.103:554/Streaming/Channels/102'
+    still_image_url: 'http://10.172.90.103/Streaming/Channels/1/picture'
+    name: Entry
+    username: !secret cv_cctv_username
+    password: !secret cv_cctv_password
+    authentication: digest
+  - platform: generic
+    stream_source: 'rtsp://10.172.90.104:554/Streaming/Channels/102'
+    still_image_url: 'http://10.172.90.104/Streaming/Channels/1/picture'
+    name: Patio
+    username: !secret cv_cctv_username
+    password: !secret cv_cctv_password
+    authentication: digest
+  - platform: generic
+    stream_source: 'rtsp://10.172.90.105:554/Streaming/Channels/102'
+    still_image_url: 'http://10.172.90.105/Streaming/Channels/1/picture'
+    name: Backyard 1
+    username: !secret cv_cctv_username
+    password: !secret cv_cctv_password
+    authentication: digest
+  - platform: generic
+    stream_source: 'rtsp://10.172.90.106:554/Streaming/Channels/102'
+    still_image_url: 'http://10.172.90.106/Streaming/Channels/1/picture'
+    name: Backyard 2
+    username: !secret cv_cctv_username
+    password: !secret cv_cctv_password
+    authentication: digest
+
+    
+# cv_cam1: "rtsp://admin:Karelin1024@10.172.90.101:554/Streaming/Channels/102"
+# cv_cam2: "rtsp://admin:Karelin1024@10.172.90.102:554/Streaming/Channels/102"
+# cv_cam3: "rtsp://admin:Karelin1024@10.172.90.102:554/Streaming/Channels/102"
+# cv_cam4: "rtsp://admin:Karelin1024@10.172.90.102:554/Streaming/Channels/102"
+# cv_cam5: "rtsp://admin:Karelin1024@10.172.90.102:554/Streaming/Channels/102"
+    
+#   - platform: onvif
+#     host: 10.172.90.101
+#     name: Driveway
+#     username: hassio
+#     password: !secret mfi_password
+#     profile: 2
+#   - platform: onvif
+#     host: 10.172.90.102
+#     name: Courtyard
+#     username: hassio
+#     password: !secret mfi_password
+#     profile: 1
+#   - platform: onvif
+#     host: 10.172.90.103
+#     name: Entry
+#     username: hassio
+#     password: !secret mfi_password
+#     profile: 0

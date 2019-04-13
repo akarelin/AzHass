@@ -2,19 +2,9 @@ device_tracker:
   - platform: automatic
     client_id: !secret automatic_client_id_mb
     secret: !secret automatic_secret_mb
-  #  devices:
-  #    - !secret automatic_mb_name
-  #    - !secret automatic_mb
-  # - platform: automatic
-  #   client_id: !secret automatic_client_id_bmw
-  #   secret: !secret automatic_secret_bmw
-  #   devices:
-  #     - !secret automatic_bmw_name
-  #     - !secret automatic_bmw
   - platform: mqtt_json
     devices:
       car_bmw: car/bmw
-      car_mb: car/mb
 
 group:
   cars:
@@ -22,17 +12,50 @@ group:
     icon: mdi:car
     entities:
       - device_tracker.car_mb_automatic
-      - device_tracker.car_mb
-#      - sensor.car_mb_fuel
-      - device_tracker.tile_3b3f0bd54db6e25d
+      - device_tracker.keys_mb
+      - sensor.car_mb_fuel
       - device_tracker.car_bmw
-#      - sensor.car_bmw_fuel
-      - device_tracker.tile_1520116806d5c3c0
+      - sensor.car_bmw_fuel
+      - device_tracker.keys_bmw
   cars_ui:
     name: Cars
     icon: mdi:car
     entities:
       - group.cars
+
+sensor:
+  - platform: template
+    sensors:
+      car_bmw_fuel:
+        friendly_name: BMW Fuel
+        unit_of_measurement: '%'
+        value_template: >-
+          {{ states.device_tracker.car_bmw.attributes.battery_level|round }}
+        icon_template: >-
+          {% if states.device_tracker.car_bmw.attributes.battery_level > 80 %}
+            mdi:gauge-full
+          {% elif states.device_tracker.car_bmw.attributes.battery_level > 40 %}
+            mdi:gauge
+          {% elif states.device_tracker.car_bmw.attributes.battery_level > 25 %}
+            mdi:gauge-low
+          {% else %}
+            mdi:gauge-empty
+          {% endif %}
+      car_mb_fuel:
+        friendly_name: MB Fuel
+        unit_of_measurement: '%'
+        value_template: >-
+          {{ states.device_tracker.car_mb_automatic.attributes.fuel_level|round }}
+        icon_template: >-
+          {% if states.device_tracker.car_mb_automatic.attributes.fuel_level > 80 %}
+            mdi:gauge-full
+          {% elif states.device_tracker.car_mb_automatic.attributes.fuel_level > 40 %}
+            mdi:gauge
+          {% elif states.device_tracker.car_mb_automatic.attributes.fuel_level > 25 %}
+            mdi:gauge-low
+          {% else %}
+            mdi:gauge-empty
+          {% endif %}
 
 # sensor:
 #   - platform: template

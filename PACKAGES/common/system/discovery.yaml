@@ -7,12 +7,15 @@ discovery:
     - bose_soundtouch
     - denonavr
     - directv
+    - enigma2
     - frontier_silicon
     - google_cast
     - harmony
+    - igd
     - ikea_tradfri
     - logitech_mediaserver
     - netgear_router
+    - octoprint
     - openhome
     - panasonic_viera
     - philips_hue

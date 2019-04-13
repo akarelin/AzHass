@@ -1,4 +1,4 @@
-automation debug:
+automation:
   alias: "Person Notification Debugger"
   hide_entity: true
   trigger:
@@ -13,24 +13,23 @@ automation debug:
     condition: template
     value_template: "{{ trigger.to_state.state != trigger.from_state.state }}"
   action:
-    service: notify.alex_telegram
+    service: notify.family
     data_template:
       message: "{{ trigger.entity_id.split('.')[1]|capitalize }}: {{ trigger.to_state.state|lower }}"
 
-automation 4irina:
-  alias: "Irina Notifications"
+automation driving:
+  alias: "Driving Notifications"
   hide_entity: true
   trigger:
-    platform: state
-    entity_id: 
-      - device_tracker.alex
-      - device_tracker.galina
-      - input_select.sway
-      - input_select.creekview
+    # - platform: mqtt
+    #   topic: person/alex/activity
+    - platform: state
+      entity_id:
+        - sensor.alex_activity
   condition:
     condition: template
     value_template: "{{ trigger.to_state.state != trigger.from_state.state }}"
   action:
-    service: notify.irina_telegram
+    service: notify.alex
     data_template:
-      message: "{{ trigger.entity_id.split('.')[1]|capitalize }}: {{ trigger.to_state.state|lower }}"
+      message: "{{ trigger.entity_id.split('.')[1]|capitalize }} is {{ trigger.to_state.state|lower }}"

@@ -1,0 +1,33 @@
+device_tracker:
+  - platform: mqtt_json
+    devices:
+      galina: person/galina/location
+      galina_iphone: device/galina/iphone
+      galina_watch: device/galina/watch
+      galina_ipad: device/galina/ipad
+
+group:
+  galina:
+    name: Galina
+    icon: mdi:face
+    entities:
+      - device_tracker.galina
+      - device_tracker.galina_iphone
+      - device_tracker.galina_watch
+      - device_tracker.galina_ipad
+
+homeassistant:
+  customize:
+    device_tracker.galina:
+      friendly_name: Galina
+      entity_picture: /local/galina.jpg
+      icon: mdi:face
+    device_tracker.galina_iphone:
+      friendly_name: Galina iPhone
+      icon: mdi:cellphone-iphone
+    device_tracker.galina_watch:
+      icon: mdi:watch-variant
+      friendly_name: Galina Watch
+    device_tracker.galina_ipad:
+      icon: mdi:tablet-ipad
+      friendly_name: Galina iPad

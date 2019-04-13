@@ -1,0 +1,85 @@
+device_tracker:
+  - platform: mqtt_json
+    devices:
+      alex: person/alex/location
+      alex_iphone: device/alex/iphone
+      alex_surface: device/alex/surface
+      alex_nuc: device/alex/nuc
+      alex_pixel: device/alex/pixel
+      alex_nexus: device/alex/nexus
+      alex_watch3: device/alex/watch3
+      alex_watch4: device/alex/watch4
+      alex_wp: device/alex/wp
+      alex_backpack: item/alex/backpack
+      alex_keyfobs: item/alex/keyfobs
+      alex_wallet: item/alex/wallet
+
+sensor:
+  - platform: mqtt
+    name: "Alex Activity"
+    unique_id: "alex_activity"
+    state_topic: person/alex/activity
+    expire_after: 120
+
+group:
+  alex:
+    name: Alex
+    icon: mdi:paw
+    entities:
+      - device_tracker.alex
+      - device_tracker.alex_iphone
+      - device_tracker.alex_watch4
+      - device_tracker.alex_watch3
+      - device_tracker.alex_pixel
+      - device_tracker.alex_nexus
+      - device_tracker.alex_surface
+      - device_tracker.alex_nuc
+      - device_tracker.alex_backpack
+      - device_tracker.alex_keyfobs
+      - device_tracker.alex_wallet
+  alex_ui:
+    name: Alex
+    icon: mdi:paw
+    view: true
+    entities:
+      - group.alex
+
+homeassistant:
+  customize:
+    device_tracker.alex:
+      friendly_name: Alex
+      entity_picture: /local/alex.jpg
+      icon: mdi:paw
+    device_tracker.alex_iphone:
+      friendly_name: Alex iPhone
+      icon: mdi:cellphone-iphone
+    device_tracker.alex_pixel:
+      friendly_name: Alex Pixel
+      icon: mdi:cellphone-android
+    device_tracker.alex_nexus:
+      icon: mdi:cellphone-android
+      friendly_name: Alex Nexus
+    device_tracker.alex_watch4:
+      icon: mdi:watch-variant
+      friendly_name: Alex Watch 4
+    device_tracker.alex_watch3:
+      icon: mdi:watch-variant
+      friendly_name: Alex Watch 3
+    device_tracker.alex_surface:
+      icon: mdi:laptop-windows
+      friendly_name: Alex Surface
+    device_tracker.alex_wp:
+      icon: mdi:windows
+      friendly_name: Alex WP
+    device_tracker.alex_nuc:
+      icon: mdi:desktop-classic
+      friendly_name: Alex NUC
+    device_tracker.alex_backpack:
+      icon: mdi:wallet-travel
+      friendly_name: Alex BackPack
+    device_tracker.alex_keyfobs:
+      icon: mdi:nfc-variant
+      friendly_name: Alex Keyfobs
+    device_tracker.alex_wallet:
+      icon: mdi:wallet-outline
+      friendly_name: Alex Wallet

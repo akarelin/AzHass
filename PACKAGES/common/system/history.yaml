@@ -1,0 +1,13 @@
+history:
+  exclude: 
+    domains:
+      - automation
+      - configurator
+    entities: 
+      - binary_sensor.remote_ui
+      - sensor.custom_card_tracker
+      - sensor.custom_component_tracker
+logbook:
+recorder:
+  db_url: !secret mysql_connstring
+  purge_interval: 0

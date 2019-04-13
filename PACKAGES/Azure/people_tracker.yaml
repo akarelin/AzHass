@@ -25,6 +25,5 @@ automation dt2pt:
             "latitude": {{ trigger.to_state.attributes.latitude }},
             "longitude": {{ trigger.to_state.attributes.longitude }},
             "gps_accuracy": {{ trigger.to_state.attributes.gps_accuracy | int }},
-            "triggered_by": "{{ state_attr('trigger.to_state', 'triggered_by') }}"
+            "source": "{{ trigger.entity_id.split('.')[1].split('_')[0] }} on {{ states.zone.home.attributes.friendly_name }}"
           }
-        retain: true

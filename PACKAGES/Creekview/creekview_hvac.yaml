@@ -1,0 +1,130 @@
+weather:
+  - platform: darksky
+    name: Creekview
+    api_key: !secret darksky_api_key
+    latitude: !secret creekview_la
+    longitude: !secret creekview_lo
+
+homeassistant:
+  customize:
+    weather.creekview:
+      hidden: false
+    climate.master_bathroom:
+      icon: mdi:gradient
+  customize_glob:
+    "sensor.*_humidity":
+      hidden: true
+    "sensor.*_temperature":
+      hidden: true
+    "weather.*":
+      hidden: true
+    "binary_sensor.*_occupancy":
+      hidden: true
+
+nuheat:
+  username: !secret nuheat_username
+  password: !secret nuheat_password
+  devices: 255666
+
+climate:
+  - platform: sensibo
+    api_key: !secret sensibo_api_key
+    id:
+      - HLHnPPMu
+      - ufWkRzLQ
+
+ecobee:
+  api_key: !secret ecobee_api_key_azure
+
+script:
+  cv_hvac_off:
+    sequence: 
+      - service: climate.ecobee_resume_program
+        data:
+          entity_id:
+            - climate.alex_office
+            - climate.downstairs
+            - climate.guest_bedroom
+            - climate.master_bedroom
+            - climate.upstairs
+            - climate.living_room
+      - service: climate.set_operation_mode
+        data:
+          entity_id:
+            - climate.downstairs
+            - climate.guest_bedroom
+            - climate.master_bedroom
+            - climate.upstairs
+            - climate.living_room
+          operation_mode: 'off'
+      - service: climate.set_temperature
+        data:
+          entity_id: climate.master_bathroom
+          temperature: 5
+      - service: climate.set_hold_mode
+        data:
+          entity_id: climate.master_bathroom
+          hold_mode: temperature
+  cv_hvac_off_alex:
+    sequence:
+      - service: climate.set_operation_mode
+        data:
+          entity_id: climate.alex_office
+          operation_mode: 'off'
+  cv_hvac_home:
+    sequence:
+      - service: climate.set_hold_mode
+        data:
+          entity_id:
+            - climate.downstairs
+            - climate.master_bedroom
+          hold_mode: home
+      - service: climate.nuheat_resume_program
+        data:
+          entity_id: climate.master_bathroom
+  cv_hvac_home_alex:
+    sequence:
+      - service: climate.set_hold_mode
+        data:
+          entity_id: climate.alex_office
+          hold_mode: home
+  cv_hvac_away:
+    sequence:
+      - service: climate.set_away_mode
+        data:
+          entity_id:
+            - climate.downstairs
+            - climate.master_bedroom
+          away_mode: 'on'
+  cv_hvac_away_alex:
+    sequence:
+      - service: climate.set_away_mode
+        data:
+          entity_id:
+            - climate.alex_office
+          away_mode: 'on'
+
+# group:
+#   creekview_hvac:
+#     name: Creekview HVAC
+#     view: false
+#     control: hidden
+#     entities:
+#       - weather.creekview
+#       - script.cv_hvac_away
+#       - script.cv_hvac_home_winter
+#       - climate.downstairs
+#       - climate.master_bedroom
+#       - climate.master_bathroom
+#       - climate.alex_office
+#   creekview_hvac_misc:
+#     name: Creekview HVAC Misc
+#     view: false
+#     control: hidden
+#     entities:
+#       - climate.alex_office_aux
+#       - climate.gym
+#       - climate.guest_bedroom
+#       - climate.living_room
+#       - climate.upstairs
+

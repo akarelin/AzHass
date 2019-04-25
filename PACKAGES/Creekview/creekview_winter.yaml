@@ -1,0 +1,36 @@
+script:
+  cv_hvac_on_winter:
+    sequence:
+      - service: climate.ecobee_resume_program
+        data:
+          entity_id:
+            - climate.alex_office
+            - climate.downstairs
+            - climate.guest_bedroom
+            - climate.master_bedroom
+            - climate.upstairs
+            - climate.living_room
+      - service: climate.set_temperature
+        data:
+          entity_id: climate.master_bathroom
+          temperature: 30
+      - service: climate.set_hold_mode
+        data:
+          entity_id: climate.master_bathroom
+          hold_mode: temperature
+      - service: climate.set_operation_mode
+        data:
+          entity_id:
+            - climate.downstairs
+            - climate.guest_bedroom
+            - climate.master_bedroom
+          operation_mode: heat
+  cv_hvac_on_winter_alex:
+    sequence:
+      - service: climate.ecobee_resume_program
+        data:
+          entity_id: climate.alex_office
+      - service: climate.set_operation_mode
+        data:
+          entity_id: climate.alex_office
+          operation_mode: heat

@@ -1,0 +1,37 @@
+switch:
+  - platform: mqtt
+    name: "Power Sonos Core"
+    state_topic: "power/creekview/sonos_core/state"
+    command_topic: "power/creekview/sonos_core/set"
+  - platform: mqtt
+    name: "Power Sonos Other"
+    state_topic: "power/creekview/sonos_other/state"
+    command_topic: "power/creekview/sonos_other/set"
+  - platform: mqtt
+    name: "Power Sonos Backyard"
+    state_topic: "power/creekview/sonos_backyard/state"
+    command_topic: "power/creekview/sonos_backyard/set"
+  - platform: mqtt
+    name: "Power Rack AV"
+    state_topic: "power/creekview/rack_av/state"
+    command_topic: "power/creekview/rack_av/set"
+  - platform: mqtt
+    name: "Power AO AV"
+    state_topic: "power/creekview/ao_av/state"
+    command_topic: "power/creekview/ao_av/set"
+  - platform: mqtt
+    name: "Power FR AV"
+    state_topic: "power/creekview/fr_av/state"
+    command_topic: "power/creekview/fr_av/set"
+  - platform: mqtt
+    name: "Power MBS AV"
+    state_topic: "power/creekview/mbs_av/state"
+    command_topic: "power/creekview/mbs_av/set"
+  - platform: mqtt
+    name: "Power Alex Desk"
+    state_topic: "power/creekview/alex_desk/state"
+    command_topic: "power/creekview/alex_desk/set"
+  - platform: mqtt
+    name: "Power Alex NUC"
+    state_topic: "power/creekview/alex_nuc/state"
+    command_topic: "power/creekview/alex_nuc/set"

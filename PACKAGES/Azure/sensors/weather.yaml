@@ -1,11 +1,6 @@
 
 weather:
   - platform: darksky
-    name: Creekview
-    api_key: !secret darksky_api_key
-    latitude: !secret creekview_la
-    longitude: !secret creekview_lo
-  - platform: darksky
     name: Sway
     api_key: !secret darksky_api_key
     latitude: !secret sway_la

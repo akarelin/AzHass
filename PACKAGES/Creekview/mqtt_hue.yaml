@@ -1,0 +1,36 @@
+light:
+  - platform: mqtt
+    name: "Courtyard Lamps"
+    state_topic: "creekview/light/courtyard_lamps/state"
+    command_topic: "creekview/light/courtyard_lamps/set"
+  - platform: mqtt
+    name: "Courtyard Colorloop"
+    state_topic: "creekview/light/courtyard_colorloop/state"
+    command_topic: "creekview/light/courtyard_colorloop/set"
+  - platform: mqtt
+    name: "Hue Front"
+    state_topic: "creekview/light/front_colors/state"
+    command_topic: "creekview/light/front_colors/set"
+
+#   - platform: mqtt
+#     name: "Front"
+#     state_topic: "creekview/light/front/state"
+#     command_topic: "creekview/light/front/set"
+
+  - platform: mqtt
+    name: "Upstairs Corridor"
+    state_topic: "creekview/light/upstairs_corridor/state"
+    command_topic: "creekview/light/upstairs_corridor/set"
+  - platform: mqtt
+    name: "Stairs Ambient"
+    state_topic: "creekview/light/stairs_ambient/state"
+    command_topic: "creekview/light/stairs_ambient/set"
+  - platform: mqtt
+    name: "Family Room Ambient"
+    state_topic: "creekview/light/family_room_ambient/state"
+    command_topic: "creekview/light/family_room_ambient/set"
+
+  - platform: mqtt
+    name: "Master Closet"
+    state_topic: "creekview/light/master_closet/state"
+    command_topic: "creekview/light/master_closet/set"

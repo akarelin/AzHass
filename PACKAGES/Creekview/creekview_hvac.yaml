@@ -1,3 +1,6 @@
+ecobee:
+  api_key: !secret ecobee_api_key_azure
+
 weather:
   - platform: darksky
     name: Creekview
@@ -32,9 +35,6 @@ climate:
     id:
       - HLHnPPMu
       - ufWkRzLQ
-
-ecobee:
-  api_key: !secret ecobee_api_key_azure
 
 script:
   cv_hvac_off:

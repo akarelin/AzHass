@@ -31,7 +31,3 @@ switch:
     name: "Power Alex Desk"
     state_topic: "power/creekview/alex_desk/state"
     command_topic: "power/creekview/alex_desk/set"
-  - platform: mqtt
-    name: "Power Alex NUC"
-    state_topic: "power/creekview/alex_nuc/state"
-    command_topic: "power/creekview/alex_nuc/set"

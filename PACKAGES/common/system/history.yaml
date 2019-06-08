@@ -11,3 +11,4 @@ logbook:
 recorder:
   db_url: !secret mysql_connstring
   purge_interval: 0
+

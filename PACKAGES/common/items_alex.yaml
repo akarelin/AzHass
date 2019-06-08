@@ -9,7 +9,6 @@ device_tracker:
       alex_nexus: device/alex/nexus
       alex_watch3: device/alex/watch3
       alex_watch4: device/alex/watch4
-      alex_wp: device/alex/wp
       alex_backpack: item/alex/backpack
       alex_keyfobs: item/alex/keyfobs
       alex_wallet: item/alex/wallet
@@ -68,9 +67,6 @@ homeassistant:
     device_tracker.alex_surface:
       icon: mdi:laptop-windows
       friendly_name: Alex Surface
-    device_tracker.alex_wp:
-      icon: mdi:windows
-      friendly_name: Alex WP
     device_tracker.alex_nuc:
       icon: mdi:desktop-classic
       friendly_name: Alex NUC

@@ -1,0 +1,35 @@
+light:
+  - platform: mqtt
+    name: "Entry"
+    state_topic: "creekview/light/entry/state"
+    command_topic: "creekview/light/entry/set"
+  - platform: mqtt
+    name: "Entry Decorative"
+    state_topic: "creekview/light/entry_decorative/state"
+    command_topic: "creekview/light/entry_decorative/set"
+  - platform: mqtt
+    name: "Living Room Candles"
+    state_topic: "creekview/light/living_room_candles/state"
+    command_topic: "creekview/light/living_room_candles/set"
+  - platform: mqtt
+    name: "Dining Night"
+    state_topic: "creekview/light/dining_night/state"
+    command_topic: "creekview/light/dining_night/set"
+  - platform: mqtt
+    name: "empty_office_lamp"
+    state_topic: "creekview/light/empty_office_lamp/state"
+    command_topic: "creekview/light/empty_office_lamp/set"
+
+switch:
+  - platform: mqtt
+    name: "Hot Water"
+    state_topic: "creekview/switch/hot_water/state"
+    command_topic: "creekview/switch/hot_water/set"
+  - platform: mqtt
+    name: "Fly Zappers"
+    state_topic: "creekview/switch/fly_zappers/state"
+    command_topic: "creekview/switch/fly_zappers/set"
+  - platform: mqtt
+    name: "Library Pandas"
+    state_topic: "creekview/switch/library_pandas/state"
+    command_topic: "creekview/switch/library_pandas/set"

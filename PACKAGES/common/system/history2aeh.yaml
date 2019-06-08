@@ -1,0 +1,12 @@
+azure_event_hub:
+  event_hub_namespace: !secret event_hub_namespace
+  event_hub_instance_name: !secret event_hub_instance_name
+  event_hub_sas_policy: !secret event_hub_sas_policy
+  event_hub_sas_key: !secret event_hub_sas_key
+  filter:
+    exclude_domains: 
+      - configurator
+    exclude_entities: 
+      - binary_sensor.remote_ui
+      - sensor.custom_card_tracker
+      - sensor.custom_component_tracker
